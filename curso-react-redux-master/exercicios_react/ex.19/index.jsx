@@ -8,6 +8,12 @@ import fieldReducer from './fieldReducer'
 
 const reducers = combineReducers({
     field: fieldReducer
+    /*
+    field: () =>{
+        console.log('ok')
+        return { value: 'ok'}
+    }
+    */
 })
 
 ReactDOM.render(

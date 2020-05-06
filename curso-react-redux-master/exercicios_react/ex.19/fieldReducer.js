@@ -1,4 +1,4 @@
-const INITIAL_STATE = { value: 'Opa' }
+const INITIAL_STATE = { value: 'Vai Corinthians' }
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
