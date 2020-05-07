@@ -1,13 +1,25 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+//import React, { Component } from 'react'
+import React from 'react'
+//import axios from 'axios'
 
 import PageHeader from '../template/pageHeader'
 import TodoForm from './todoForm'
 import TodoList from './todoList'
 
-const URL = 'http://localhost:3003/api/todos'
+//const URL = 'http://localhost:3003/api/todos'
 
-export default class Todo extends Component {
+export default props => (
+    <div>
+        <PageHeader name='Tarefas' small='Cadastro'></PageHeader>
+        <TodoForm />
+        <TodoList />
+    </div>
+)
+
+
+    //DEPOIS EU EU ADICIONEI O REDUX EU COMENTEI TUDO PRA BAIXO
+    //E COMENTEI PRA CIMA TB O QUE EU DEIXEI DE USAR
+    /*
     constructor(props) {
         super(props)
 
@@ -76,6 +88,7 @@ export default class Todo extends Component {
         this.refresh()
     }
 
+    
     render() {
         return (
             <div>
@@ -94,4 +107,5 @@ export default class Todo extends Component {
             </div>
         )
     }
-}
+    */
+

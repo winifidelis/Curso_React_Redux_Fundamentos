@@ -1,3 +1,48 @@
 Adicionar biblioteca redux para criar projeto
 npm i --save-dev react-redux@5.0.2 redux@3.6.0
 
+APLICANDO REDUX NO PROJETO TODO
+
+executei o backend com o comando
+#npm run production
+e para acompanhar o status
+#node_modules\.bin\pm2 monit
+quanto eu apliquei REDUX no projeto Todo
+eu entrei na pasta frontend e adicionei algumas dependencias
+#npm i --save-dev redux@3.6.0 react-redux@5.0.2
+
+depois iniciar o serviço
+#npm run dev
+
+
+instalar plugin para debug do redux
+busqei por
+#https://www.google.com/search?q=redux+devtools+chrome&oq=redux%2Fdevtools&aqs=chrome.2.69i57j0l6j69i58.5591j0j7&sourceid=chrome&ie=UTF-8
+e encontrei
+#https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+
+depois de fazer uma porrada de alterações eu irei adicionar middleware
+parei o projeto e adicionei promises, com o codigo abaixo
+#npm i --save-dev redux-promise@0.5.3
+
+depois iniciar o serviço
+#npm run dev
+
+
+parei tudo novamente, agora eu irei instalar um pacote para 
+executar mais de ação dentro do middleware
+executar a instalação abaixo
+#npm i --save-dev redux-multi@0.1.12
+
+depois iniciar o serviço
+#npm run dev
+
+parei novamente para instalar outro pacote para trabalhar junto com o mult
+executar a instalação abaixo
+#npm i --save-dev redux-thunk@2.2.0
+
+depois iniciar o serviço
+#npm run dev
+
+
+
