@@ -16,6 +16,7 @@ class Field extends Component {
         this.setState({ value: event.target.value })
     }
 
+    //o valor vem do props, mas ele vem da modificação do componente
     render() {
         return (
             <div>
@@ -30,6 +31,7 @@ class Field extends Component {
 //Isso aqui é um Decorator
 function mapStateToProps(state) {
     return {
+        //toda vez que o status do componente mudar ele ira mudar o stado do componente
         value: state.field.value
     }
 }
