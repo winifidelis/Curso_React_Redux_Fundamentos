@@ -19,7 +19,6 @@ module.exports = (req, res, next) => {
         next()
     }
 }
-
 //converte os erros em um array de mensagens
 //
 const parseErrors = (nodeRestfulErrors) => {
