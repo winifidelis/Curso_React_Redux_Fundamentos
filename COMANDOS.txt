@@ -16,7 +16,7 @@ depois iniciar o serviço
 
 
 instalar plugin para debug do redux
-busqei por
+busquei por
 #https://www.google.com/search?q=redux+devtools+chrome&oq=redux%2Fdevtools&aqs=chrome.2.69i57j0l6j69i58.5591j0j7&sourceid=chrome&ie=UTF-8
 e encontrei
 #https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
