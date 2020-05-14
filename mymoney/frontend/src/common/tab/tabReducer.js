@@ -1,3 +1,6 @@
+
+//gerenciados do estado da abas
+//gerenciador do reducer
 const INITIAL_STATE = { selected: '', visible: {} }
 
 export default (state = INITIAL_STATE, action) => {

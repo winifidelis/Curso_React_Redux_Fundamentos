@@ -1,3 +1,5 @@
+
+//componente funcional
 import React from 'react'
 
 export default props => (

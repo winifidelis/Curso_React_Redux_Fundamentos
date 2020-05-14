@@ -6,6 +6,7 @@ import DashboardReducer from '../dashboard/dashboardReducer'
 import TabReducer from '../common/tab/tabReducer'
 import BillingCycleReducer from '../billingCycle/billingCycleReducer'
 
+//constante que represente todos os redurcers da aplicação
 const rootReducer = combineReducers({
     dashboard: DashboardReducer,
     tab: TabReducer,

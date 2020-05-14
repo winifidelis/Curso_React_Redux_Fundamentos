@@ -1,3 +1,6 @@
+
+//irá agrupar os conteudos das abas
+//componente funcional
 import React from 'react'
 
 export default props => (

@@ -2,9 +2,13 @@ const BillingCycle = require('./billingCycle')
 const errorHandler = require('../common/errorHandler')
 
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
+//a linha abaixo é para tratar as atualizações, ajudara a receber os objetos atualizados
+//e também executa as validações, por exemplo se tentar inserir um objeto com dados obrigatórios
 BillingCycle.updateOptions({new: true, runValidators: true})
+//metodo que intercepta a requisição antes ou depois de alguma ação
 BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
+//Rota para obter o Count de dados no banco de dados
 BillingCycle.route('count', (req, res, next) => {
     BillingCycle.count((error, value) => {
         if(error) {

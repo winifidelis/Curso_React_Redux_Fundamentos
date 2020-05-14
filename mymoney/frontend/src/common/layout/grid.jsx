@@ -1,8 +1,14 @@
+
+
 import React, { Component } from 'react'
 
+//componente criado baseado em classe
 export default class Grid extends Component {
 
+    //esse metodo recebe uma string separado por espaço
+    //e ele transforma isso nas classes CSS do botstrap
     toCssClasses(numbers) {
+        //separei o array de string pelos espaços
         const cols = numbers ? numbers.split(' ') : []
         let classes = ''
 
@@ -15,6 +21,7 @@ export default class Grid extends Component {
     }
 
     render() {
+        //se a propriedade cols não for passada ele envia 12 para a função
         const gridClasses = this.toCssClasses(this.props.cols || '12')
         return (
             <div className={gridClasses}> 
