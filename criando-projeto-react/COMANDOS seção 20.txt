@@ -1,0 +1,13 @@
+PARA CRIAR ESSE PROJETO
+# mkdir criando-projeto-react
+# cd criando-projeto-react
+# npm i -g create-react-app
+# create-react-app projeto-react
+
+com os comando acima eu ja tenho um projeto praticamente inteiro pronto
+ja tenho uma aplicação base para referencia
+
+depois
+# cd projeto-react
+# npm start
+e veja o projeto executando
