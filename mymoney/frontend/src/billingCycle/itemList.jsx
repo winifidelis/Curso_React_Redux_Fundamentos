@@ -28,6 +28,7 @@ class ItemList extends Component {
                     placeholder='Informe o nome' readOnly={this.props.readOnly} /></td>
                 <td><Field name={`${this.props.field}[${index}].value`} component={Input}
                     placeholder='Informe o valor' readOnly={this.props.readOnly} /></td>
+                    {/* Abaixo tenho um IF para apresentar o status */}
                 <If test={this.props.showStatus}>
                     <td><Field name={`${this.props.field}[${index}].status`} component={Input}
                         placeholder='Informe o status' readOnly={this.props.readOnly} /></td>

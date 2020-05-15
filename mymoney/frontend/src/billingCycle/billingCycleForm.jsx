@@ -7,17 +7,38 @@ import { reduxForm, Field, formValueSelector } from 'redux-form'
 
 import { init } from './billingCycleActions'
 import LabelAndInput from '../common/form/labelAndInput'
-//import ItemList from './itemList'
-//import Summary from './summary'
+import ItemList from './itemList'
+import Summary from './summary'
 
-import CreditList from './creditList'
+//a linha abaixo deixou de existir por eu ter transformando
+//esse arquivo no itemList.jsx
+//import CreditList from './creditList'
 
 class BillingCycleForm extends Component {
+
+    calculateSummary() {
+        // t acumulador
+        // v valor atual
+        const sum = (t, v) => t + v
+        return {
+            // map transforma um determinado objeto ou elemento de uma array e alguma outra coisa
+            sumOfCredits: this.props.credits.map(c => +c.value || 0).reduce(sum),
+            sumOfDebts: this.props.debts.map(d => +d.value || 0).reduce(sum)
+            //coloquei o + na frente pra converter uma string em numerico, isso é a forma mais simples
+            //se não conseguir transforma retorna 0
+
+            //como eu estou usando o MAP eu terei um array de vários numeros
+            //e nisso ele vai somando tudo e acumulando no t
+            //no caso eu retorno as soma de credito e a soma de debitos
+
+        }
+    }
 
     render() {
         const { handleSubmit, readOnly, credits, debts } = this.props
         //console.log(handleSubmit)
-        //const { sumOfCredits, sumOfDebts } = this.calculateSummary()
+        //abaixo eu estou usando os dados de calculateSummary
+        const { sumOfCredits, sumOfDebts } = this.calculateSummary()
         return (
             <form role='form' onSubmit={handleSubmit}>
                 <div className='box-body'>
@@ -27,7 +48,14 @@ class BillingCycleForm extends Component {
                         label='Mês' cols='12 4' placeholder='Informe o mês' />
                     <Field name='year' component={LabelAndInput} type='number' readOnly={readOnly}
                         label='Ano' cols='12 4' placeholder='Informe o ano' />
-                    <CreditList cols='12 6' readOnly={readOnly} />
+
+                    <Summary credit={sumOfCredits} debt={sumOfDebts} />
+
+                    {/*<CreditList cols='12 6' list={credits} readOnly={readOnly} />*/}
+                    <ItemList cols='12 6' list={credits} readOnly={readOnly}
+                        field='credits' legend='Créditos' />
+                    <ItemList cols='12 6' list={debts} readOnly={readOnly}
+                        field='debts' legend='Débitos' showStatus='true' />
                 </div>
                 <div className='box-footer'>
                     <button type='submit' className={`btn btn-${this.props.submitClass}`}>
@@ -47,27 +75,19 @@ class BillingCycleForm extends Component {
 //dos dados no banco de dados
 //export default reduxForm({ form: 'billingCycleForm', destroyOnUnmount: false })(BillingCycleForm)
 BillingCycleForm = reduxForm({ form: 'billingCycleForm', destroyOnUnmount: false })(BillingCycleForm)
-const mapDispatchToProps = dispatch => bindActionCreators({ init }, dispatch)
-export default connect(null, mapDispatchToProps)(BillingCycleForm)
 
+//isso aqui pega um valor que está dentro do formulário
+//recebe como parametro o Id do formulario que no caso é  'billingCycleForm'
+//irei pegar o dado que está controlado pelo redux form que está dentro do contexto/estado controlado pelo redux
+//e colocar dentro deste componente
+const selector = formValueSelector('billingCycleForm')
 
-
-/*
-class BillingCycleForm extends Component {
-
-    calculateSummary() {
-        const sum = (t, v) => t + v
-        return {
-            sumOfCredits: this.props.credits.map(c => +c.value || 0).reduce(sum),
-            sumOfDebts: this.props.debts.map(d => +d.value || 0).reduce(sum)
-        }
-    }
-*/
-
-//const selector = formValueSelector('billingCycleForm')
-/*
+//recebe um estado e entrega um objeto
 const mapStateToProps = state => ({
     credits: selector(state, 'credits'),
     debts: selector(state, 'debts')
 })
-*/
+
+const mapDispatchToProps = dispatch => bindActionCreators({ init }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(BillingCycleForm)
+

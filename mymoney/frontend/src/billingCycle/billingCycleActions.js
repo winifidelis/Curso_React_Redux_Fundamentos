@@ -4,6 +4,8 @@ import { reset as resetForm, initialize } from 'redux-form'
 import { showTabs, selectTab } from '../common/tab/tabActions'
 
 const BASE_URL = 'http://localhost:3003/api'
+//inicio essas variaveis vazias pois quando eu for incluir eu nao quero nada dentro
+//pois se eu abrir um existente e ir em incluir ele trará esses dados
 const INITIAL_VALUES = { credits: [{}], debts: [{}] }
 
 //getList é usado em billingCycleList.jsx
@@ -48,6 +50,7 @@ export function create(values) {
 */
 
 export function create(values) {
+    //console.log(values)
     return submit(values, 'post')
 }
 
