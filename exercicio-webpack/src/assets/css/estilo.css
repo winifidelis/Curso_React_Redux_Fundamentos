@@ -1,0 +1,7 @@
+body{
+    background-color: darkslateblue;
+    background-image: url(../images/joker.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
