@@ -21,7 +21,7 @@ class BillingCycleForm extends Component {
         // v valor atual
         const sum = (t, v) => t + v
         return {
-            // map transforma um determinado objeto ou elemento de uma array e alguma outra coisa
+            // map transforma um determinado objeto ou elemento de uma array e alguma outra 
             sumOfCredits: this.props.credits.map(c => +c.value || 0).reduce(sum),
             sumOfDebts: this.props.debts.map(d => +d.value || 0).reduce(sum)
             //coloquei o + na frente pra converter uma string em numerico, isso é a forma mais simples

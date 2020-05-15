@@ -5,11 +5,12 @@ import Header from '../common/template/header'
 import SideBar from '../common/template/sideBar'
 import Footer from '../common/template/footer'
 import Messages from '../common/msg/messages'
-import Routes from './routes'
+//import Routes from './routes'
 
 export default props => (
     //classe do template admnLTE 'wrapper'
     //eu sei disso por conhecer o template
+    /*
     <div className='wrapper'>
         <Header />
         <SideBar />
@@ -19,7 +20,7 @@ export default props => (
         <Footer />
         <Messages />
     </div>
-    /*
+    */
     <div className='wrapper'>
         <Header />
         <SideBar />
@@ -29,5 +30,5 @@ export default props => (
         <Footer />
         <Messages />
     </div>
-    */
+    
 )
