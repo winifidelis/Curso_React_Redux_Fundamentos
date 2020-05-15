@@ -21,7 +21,7 @@ module.exports = {
     resolve: {
         //extençõesq que serão interpretadas
         extensions: ['', '.js', '.jsx'],
-        //apeidos que apontam para locais importantes da aplicação
+        //apelidos que apontam para locais importantes da aplicação
         alias: {
             // o nome __dirname sempre vai apontar para o /node_modules
             modules: __dirname + '/node_modules',
