@@ -1,4 +1,7 @@
-import '../common/template/dependencies'
+//import '../common/template/dependencies'
+//comentei a linha acima pq agora essas dependencias estão sendo importada em authOrApp.jsx
+
+
 import React from 'react'
 
 import Header from '../common/template/header'

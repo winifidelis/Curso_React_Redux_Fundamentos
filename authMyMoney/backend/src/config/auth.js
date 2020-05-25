@@ -16,10 +16,7 @@ module.exports = (req, res, next) => {
                     errors: ['Failed to authenticate token.']
                 })
             } else {
-                //a linha abaixo eu passo o request decodificado
-                //como eu não tenho necessidade de passar o token decodificado
-                //eu comentei
-                //req.decoded = decoded
+                req.decoded = decoded
                 next()
             }
         })

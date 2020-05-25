@@ -1,7 +1,8 @@
-const auth = require('./auth')
 const express = require('express')
 
-module.exports = function (server) {
+const auth = require('./auth')
+
+module.exports = function(server) {
     /*
     * Rotas protegidas por Token JWT
     */
@@ -19,4 +20,4 @@ module.exports = function (server) {
     openApi.post('/login', AuthService.login)
     openApi.post('/signup', AuthService.signup)
     openApi.post('/validateToken', AuthService.validateToken)
-}
+    }
